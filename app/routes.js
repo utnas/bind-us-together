@@ -62,6 +62,7 @@ module.exports = function (bindUsTogether, passport) {
     bindUsTogether.get('/connect/local', function (req, res) {
         res.render('connect-local.ejs', { message: req.flash('loginMessage') });
     });
+
     bindUsTogether.post('/connect/local', passport.authenticate('local-signup', {
         successRedirect: '/profile',
         failureRedirect: '/connect/local',
@@ -131,8 +132,8 @@ module.exports = function (bindUsTogether, passport) {
 };
 
 function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()) {
         return next();
-
+    }
     res.redirect('/');
 }
