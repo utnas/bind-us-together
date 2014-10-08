@@ -127,8 +127,6 @@ module.exports = function (bindUsTogether, passport) {
             res.redirect('/profile');
         });
     });
-
-
 };
 
 function isLoggedIn(req, res, next) {
