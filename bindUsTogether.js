@@ -27,7 +27,7 @@ BindUsTogether.use(passport.initialize());
 BindUsTogether.use(passport.session());
 BindUsTogether.use(flash());
 
-require('./app/routes.js')(BindUsTogether, passport);
+require('./app/routes/routes.js')(BindUsTogether, passport);
 
 BindUsTogether.listen(port);
 
