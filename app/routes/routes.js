@@ -85,7 +85,6 @@ module.exports = function (bindUsTogether, passport) {
             failureRedirect: '/'
         }));
 
-
     bindUsTogether.get('/connect/google', passport.authorize('google', { scope: ['profile', 'email'] }));
 
     bindUsTogether.get('/connect/google/callback',
