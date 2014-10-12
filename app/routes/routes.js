@@ -1,13 +1,11 @@
+var index_route = require('./index_route');
+
 module.exports = function (bindUsTogether, passport) {
 
-    bindUsTogether.get('/', function (req, res) {
-        res.render('index.ejs');
-    });
+    bindUsTogether.get('/', index_route);
 
     bindUsTogether.get('/profile', isLoggedIn, function (req, res) {
-        res.render('profile.ejs', {
-            user: req.user
-        });
+        res.render('profile.ejs', {user: req.user});
     });
 
     bindUsTogether.get('/logout', function (req, res) {
@@ -118,7 +116,6 @@ module.exports = function (bindUsTogether, passport) {
         });
     });
 
-    // google ---------------------------------
     bindUsTogether.get('/unlink/google', isLoggedIn, function (req, res) {
         var user = req.user;
         user.google.token = undefined;

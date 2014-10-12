@@ -3,9 +3,9 @@
     "description": "Web platform to bind people together",
     "version": "0.0.1",
     "private": true,
-    "main": "bindUsTogether.js",
+    "main": "ubikin.js",
     "scripts": {
-        "start": "node bindusTogether.js"
+        "start": "node ubikin.js"
     },
     "dependencies": {
         "bcrypt-nodejs": "latest",
@@ -23,7 +23,8 @@
         "passport-facebook": "~1.0.2",
         "passport-google-oauth": "~0.1.5",
         "passport-local": "~0.1.6",
-        "passport-twitter": "~1.0.2"
+        "passport-twitter": "~1.0.2",
+        "serve-static": "latest"
     },
     "engines": {
         "node": "latest",

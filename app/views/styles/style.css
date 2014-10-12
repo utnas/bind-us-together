@@ -1,0 +1,28 @@
+.login {
+    margin-top: 20px;
+}
+
+.body {
+    padding-top: 80px;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: #428BCA;
+    color: #ffffff;
+}
+
+.center-block {
+    display: block;
+    /*display:inline-block;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlighting {
+    background-color: #cabd69;
+}
+
+a {
+    cursor: pointer;
+}

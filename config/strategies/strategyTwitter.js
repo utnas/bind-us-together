@@ -1,6 +1,6 @@
-var User = require('../app/models/user');
+var User = require('../../app/models/user');
 var TwitterStrategy = require('passport-twitter').Strategy;
-var configAuth = require('./auth');
+var configAuth = require('../auth');
 
 var twitterStrategy = new TwitterStrategy({
         consumerKey: configAuth.twitterAuth.consumerKey,

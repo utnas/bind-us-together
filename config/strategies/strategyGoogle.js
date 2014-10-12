@@ -1,6 +1,6 @@
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var User = require('../app/models/user');
-var configAuth = require('./auth');
+var User = require('../../app/models/user');
+var configAuth = require('../auth');
 
 var googleStrategy = new GoogleStrategy({
         clientID: configAuth.googleAuth.clientID,
@@ -59,4 +59,4 @@ var googleStrategy = new GoogleStrategy({
         });
     });
 
-modules.exports = googleStrategy;
+module.exports = googleStrategy;
