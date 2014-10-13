@@ -2,6 +2,26 @@
     margin-top: 20px;
 }
 
+.v-spacer {
+    margin-top: 20px;
+}
+
+.h-spacer {
+    margin-left: 20px;
+}
+
+.right-align {
+    float: right;
+}
+
+.left-align {
+    float: left;
+}
+
+.wrapper {
+    text-align: center;
+}
+
 .body {
     padding-top: 80px;
 }
@@ -25,4 +45,5 @@
 
 a {
     cursor: pointer;
+    opacity: 0.7;
 }

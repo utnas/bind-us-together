@@ -1,8 +1,21 @@
-var index_route = require('./index_route');
+/*global require, module, __dirname */
+/*jslint node: true */
+'use strict';
+
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/');
+}
 
 module.exports = function (bindUsTogether, passport) {
 
-    bindUsTogether.get('/', index_route);
+    bindUsTogether.get('/', function (req, res) {
+        res.redirect('/login');
+        console.log('Request from :\'' + req.url + '\' redirected to route login');
+    });
 
     bindUsTogether.get('/profile', isLoggedIn, function (req, res) {
         res.render('profile.ejs', {user: req.user});
@@ -124,10 +137,3 @@ module.exports = function (bindUsTogether, passport) {
         });
     });
 };
-
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/');
-}
