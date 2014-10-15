@@ -11,7 +11,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
     configDB = require('./config/database.js'),
-    serveStatic = require('serve-static');
+    serveStatic = require('serve-static'),
+    favicon = require('serve-favicon');
 require('./config/passport')(passport);
 
 mongoose.connect(configDB.url);
@@ -20,6 +21,7 @@ var port = process.env.PORT || 2222;
 var ubikin = express();
 
 ubikin.use(serveStatic(__dirname + '/app/public'));
+ubikin.use(favicon(__dirname + '/app/public/assets/images/favicon.png'));
 ubikin.use(morgan('dev'));
 ubikin.use(cookieParser());
 ubikin.use(bodyParser.json());
