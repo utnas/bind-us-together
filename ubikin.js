@@ -19,7 +19,7 @@ mongoose.connect(configDB.url);
 var port = process.env.PORT || 2222;
 var ubikin = express();
 
-ubikin.use(serveStatic(__dirname + '/'));
+ubikin.use(serveStatic(__dirname + '/app/public'));
 ubikin.use(morgan('dev'));
 ubikin.use(cookieParser());
 ubikin.use(bodyParser.json());
