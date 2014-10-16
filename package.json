@@ -1,5 +1,5 @@
 {
-    "name": "BindUsTogether",
+    "name": "ubikin",
     "description": "Web platform to bind people together",
     "version": "0.0.1",
     "private": true,
@@ -25,7 +25,10 @@
         "passport-local": "~0.1.6",
         "passport-twitter": "~1.0.2",
         "serve-static": "latest",
-        "serve-favicon": "latest"
+        "serve-favicon": "latest",
+        "mocha": "latest",
+        "karma": "latest",
+        "socket.io": "latest"
     },
     "engines": {
         "node": "latest",

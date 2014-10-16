@@ -1,9 +1,14 @@
+.my-font{
+    font-weight: 100;
+    font-size: 1em;
+    font-size-adjust: 8;
+}
 
 .page {
     background-image: url('/assets/images/background.jpg');
 }
 
-.container{
+.container {
     color: #e2e2e2;
     font-weight: 100;
     font-size: 1em;
@@ -55,7 +60,7 @@ a {
     cursor: pointer;
 }
 
-.btn{
+.btn, .input {
     background-color: rgba(255, 255, 255, 0.0);
     color: yellow;
     font-size: 13px;
