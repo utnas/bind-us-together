@@ -32,7 +32,7 @@
         "karma": "~0.12.24"
     },
     "engines": {
-        "node": "latest",
-        "npm": "latest"
+        "node": "0.10.32",
+        "npm": "~1.4.14"
     }
 }

@@ -22,7 +22,7 @@ module.exports = function (bindUsTogether, passport) {
     });
 
     bindUsTogether.get('/chat', isLoggedIn, function (req, res) {
-        res.render('../chat/index.html', {user: req.user});
+        res.render('chat.ejs', {user: req.user});
     });
 
     bindUsTogether.get('/logout', function (req, res) {
