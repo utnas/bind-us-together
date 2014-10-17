@@ -21,6 +21,10 @@ module.exports = function (bindUsTogether, passport) {
         res.render('profile.ejs', {user: req.user});
     });
 
+    bindUsTogether.get('/chat', isLoggedIn, function (req, res) {
+        res.render('../chat/index.html', {user: req.user});
+    });
+
     bindUsTogether.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
@@ -51,7 +55,7 @@ module.exports = function (bindUsTogether, passport) {
     bindUsTogether.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
             successRedirect: '/profile',
-            failureRedirect: '/'
+            failureRedirect: '/login'
         }));
 
     bindUsTogether.get('/auth/twitter', passport.authenticate('twitter', { scope: 'email' }));
@@ -59,7 +63,7 @@ module.exports = function (bindUsTogether, passport) {
     bindUsTogether.get('/auth/twitter/callback',
         passport.authenticate('twitter', {
             successRedirect: '/profile',
-            failureRedirect: '/'
+            failureRedirect: '/login'
         }));
 
     bindUsTogether.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
@@ -67,7 +71,7 @@ module.exports = function (bindUsTogether, passport) {
     bindUsTogether.get('/auth/google/callback',
         passport.authenticate('google', {
             successRedirect: '/profile',
-            failureRedirect: '/'
+            failureRedirect: '/login'
         }));
 
     bindUsTogether.get('/connect/local', function (req, res) {
@@ -85,7 +89,7 @@ module.exports = function (bindUsTogether, passport) {
     bindUsTogether.get('/connect/facebook/callback',
         passport.authorize('facebook', {
             successRedirect: '/profile',
-            failureRedirect: '/'
+            failureRedirect: '/login'
         }));
 
     bindUsTogether.get('/connect/twitter', passport.authorize('twitter', { scope: 'email' }));
@@ -93,7 +97,7 @@ module.exports = function (bindUsTogether, passport) {
     bindUsTogether.get('/connect/twitter/callback',
         passport.authorize('twitter', {
             successRedirect: '/profile',
-            failureRedirect: '/'
+            failureRedirect: '/login'
         }));
 
     bindUsTogether.get('/connect/google', passport.authorize('google', { scope: ['profile', 'email'] }));
@@ -101,7 +105,7 @@ module.exports = function (bindUsTogether, passport) {
     bindUsTogether.get('/connect/google/callback',
         passport.authorize('google', {
             successRedirect: '/profile',
-            failureRedirect: '/'
+            failureRedirect: '/login'
         }));
 
     bindUsTogether.get('/unlink/local', isLoggedIn, function (req, res) {
