@@ -22,6 +22,7 @@
         });
 
         bindUsTogether.get('/chat', isLoggedIn, function (req, res) {
+
             res.render('chat.ejs', {user: req.user});
         });
 
