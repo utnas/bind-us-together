@@ -11,7 +11,7 @@
         cookieParser = require('cookie-parser'),
         bodyParser = require('body-parser'),
         session = require('express-session'),
-        configDB = require('./config/database.js'),
+        configDB = require('./config/database'),
         serveStatic = require('serve-static'),
         favicon = require('serve-favicon'),
         socket = require('socket.io'),
@@ -35,7 +35,7 @@
     ubikin.set('views', __dirname + '/app/views');
     ubikin.set('view engine', 'ejs');
 
-    ubikin.use(session({ secret: 'kaokokokorobo-_!!!!' }));
+    ubikin.use(session({ secret: '!!---!!-à)&é+=/;.,?¨^`£$*€r-_!!!!' }));
     ubikin.use(passport.initialize());
     ubikin.use(passport.session());
     ubikin.use(flash());
@@ -44,5 +44,5 @@
 
     ubikin.listen(ubikinPort);
 
-    console.log('The server is started on ubikinPort ' + ubikinPort);
-}());
+    console.log('The server is started on Port ' + ubikinPort);
+})();
