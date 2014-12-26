@@ -1,28 +1,32 @@
-var User = require('../app/models/user');
-var localLoginStrategy = require('./strategies/strategyLocalLogin');
-var localSignUpStrategy = require('./strategies/strategyLocalSignup');
-var facebookStrategy = require('./strategies/strategyFacebook');
-var twitterStrategy = require('./strategies/strategyTwitter');
-var googleStrategy = require('./strategies/strategyGoogle');
+(function () {
+    'use strict';
 
-module.exports = function (passport) {
-    passport.serializeUser(function (user, done) {
-        done(null, user.id);
-    });
+    var User = require('../app/models/user'),
+        localLoginStrategy = require('./strategies/strategyLocalLogin'),
+        localSignUpStrategy = require('./strategies/strategyLocalSignup'),
+        facebookStrategy = require('./strategies/strategyFacebook'),
+        twitterStrategy = require('./strategies/strategyTwitter'),
+        googleStrategy = require('./strategies/strategyGoogle');
 
-    passport.deserializeUser(function (id, done) {
-        User.findById(id, function (err, user) {
-            done(err, user);
+    module.exports = function (passport) {
+        passport.serializeUser(function (user, done) {
+            done(null, user.id);
         });
-    });
 
-    passport.use('local-login', localLoginStrategy);
+        passport.deserializeUser(function (id, done) {
+            User.findById(id, function (err, user) {
+                done(err, user);
+            });
+        });
 
-    passport.use('local-signup', localSignUpStrategy);
+        passport.use('local-login', localLoginStrategy);
 
-    passport.use(facebookStrategy);
+        passport.use('local-signup', localSignUpStrategy);
 
-    passport.use(twitterStrategy);
+        passport.use(facebookStrategy);
 
-    passport.use(googleStrategy);
-};
+        passport.use(twitterStrategy);
+
+        passport.use(googleStrategy);
+    };
+})();
