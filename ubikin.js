@@ -1,7 +1,7 @@
 /*global require, module, __dirname */
 /*jslint node: true */
-'use strict';
 (function () {
+    'use strict';
 
     var express = require('express'),
         mongoose = require('mongoose'),
@@ -30,12 +30,12 @@
     ubikin.use(morgan('dev'));
     ubikin.use(cookieParser());
     ubikin.use(bodyParser.json());
-    ubikin.use(bodyParser.urlencoded({ extended: true }));
+    ubikin.use(bodyParser.urlencoded({extended: true}));
 
     ubikin.set('views', __dirname + '/app/views');
     ubikin.set('view engine', 'ejs');
 
-    ubikin.use(session({ secret: '!!---!!-à)&é+=/;.,?¨^`£$*€r-_!!!!' }));
+    ubikin.use(session({secret: '!!---!!-à)&é+=/;.,?¨^`£$*€r-_!!!!'}));
     ubikin.use(passport.initialize());
     ubikin.use(passport.session());
     ubikin.use(flash());
